@@ -1,0 +1,97 @@
+/* Configurações básicas e para responsividade */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa 100% da altura da viewport */
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Estrutura principal da calculadora */
+.calculadora {
+    width: 90%; /* Largura em dispositivos menores */
+    max-width: 400px; /* Limite em telas maiores */
+    background-color: #3a4452;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Visor (Display) */
+.visor {
+    width: 100%;
+    height: 60px;
+    background-color: #a7af7c;
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 2em; /* Tamanho da fonte relativo */
+    text-align: right;
+    border-radius: 5px;
+    color: #333;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Container dos botões usando CSS Grid para o layout responsivo */
+.botoes {
+    display: grid;
+    /* Define 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+}
+
+/* Estilo padrão dos botões */
+.botoes button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c7a89;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botoes button:hover {
+    background-color: #55606d;
+}
+
+/* Estilos específicos para botões de operadores */
+.operador {
+    background-color: #ff9f0a !important;
+}
+
+.operador:hover {
+    background-color: #e68a00 !important;
+}
+
+.btn-igual {
+    background-color: #4CAF50 !important;
+}
+
+.btn-igual:hover {
+    background-color: #45a049 !important;
+}
+
+.btn-clear, .btn-backspace {
+    background-color: #d9534f !important;
+}
+
+.btn-clear:hover, .btn-backspace:hover {
+    background-color: #c9302c !important;
+}
+
+/* Ajuste para o botão '0' ocupar 2 colunas */
+.span-2 {
+    grid-column: span 2;
+}
+
+/* Estilo para telas muito pequenas (opcional, mas bom para garantir) */
+@media (max-width: 320px) {
+    .botoes button {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
